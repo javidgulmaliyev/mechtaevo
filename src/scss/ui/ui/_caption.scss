@@ -3,5 +3,5 @@
 @use "../../variables/variables";
 
 .caption {
-  font-size: functions.responsive-value(24, 16);
+  font-size: functions.responsive-value(24, 16, $behavior: "fixed-both");
 }
