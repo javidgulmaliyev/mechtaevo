@@ -1,0 +1,40 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.slider-pagination {
+  --swiper-pagination-bullet-horizontal-gap: #{functions.responsive-value(3.5, 2.5)};
+  --swiper-pagination-color: #{variables.$color-accent};
+  --swiper-pagination-bullet-height: #{functions.responsive-value(6, 4)};
+  --swiper-pagination-bullet-border-radius: #{functions.responsive-value(20, 15)};
+  --swiper-pagination-bullet-inactive-color: #{variables.$color-e3e3e3};
+  --swiper-pagination-bullet-inactive-opacity: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: functions.responsive-value(4, 2);
+  padding-inline: functions.responsive-value(13, 0, $behavior: "fixed-both");
+
+  .swiper-pagination-bullet {
+    flex: 1 1 auto;
+    min-inline-size: functions.responsive-value(6, 4);
+    font-size: 0;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: background-color;
+      transition-duration: 0.3s;
+    }
+
+    &:not(&-active) {
+      @include mixins.hover {
+        background-color: variables.$color-accent;
+      }
+    }
+
+    &-active {
+      cursor: default;
+    }
+  }
+}
