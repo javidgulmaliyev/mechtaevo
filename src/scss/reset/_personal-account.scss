@@ -1,0 +1,21 @@
+@use "../functions/functions";
+@use "../mixins/mixins";
+@use "../variables/variables";
+@use "../../../node_modules/swiper/modules/pagination";
+
+body {
+  font-family: variables.$font-manrope;
+  font-size: 16px;
+  line-height: 1.37;
+  color: variables.$color-333333;
+  background-color: variables.$color-background;
+}
+
+.swiper {
+  margin: unset;
+  user-select: none;
+}
+
+.swiper-slide {
+  block-size: unset;
+}
