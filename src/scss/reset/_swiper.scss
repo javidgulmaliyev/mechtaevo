@@ -1,0 +1,10 @@
+@use "../../../node_modules/swiper/modules/pagination";
+
+.swiper {
+  margin: unset;
+  user-select: none;
+}
+
+.swiper-slide {
+  block-size: unset;
+}
